@@ -1,0 +1,143 @@
+.message-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1.2s ease;
+}
+body.love-active .message-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+.love-message {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 1s ease 0.5s;
+}
+body.love-active .love-message {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 2. LOVE BUTTON REVEAL */
+.love-button {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease 1s;
+}
+body.love-active .love-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. MEMORY CARD SYSTEM */
+.memory-card {
+  opacity: 0;
+  transform: translateY(80px) rotateX(15deg);
+  transition: 1s ease;
+}
+body.love-active .memory-card {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+.memory-card:hover {
+  transform: translateY(-15px) scale(1.03);
+}
+
+/* 4. TIMELINE REVEAL SYSTEM  */
+.timeline-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1.2s ease;
+}
+body.love-active .timeline-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+.timeline-card,
+.timeline-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+.timeline-card.show,
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 5. SECRET SECTION */
+#secretSection {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 1s ease;
+}
+body.love-active #secretSection {
+  opacity: 1;
+  transform: scale(1);
+}
+#secretMessage {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease 0.5s;
+}
+body.love-active #secretMessage {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 6. FINAL REVEAL SYSTEM */
+.final-section {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 1.5s ease;
+}
+body.love-active .final-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+.final-message {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: 1.5s ease 0.5s;
+}
+body.love-active .final-message {
+  opacity: 1;
+  transform: scale(1);
+}
+.final-button {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease 1s;
+}
+body.love-active .final-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 7. CINEMATIC TEXT EFFECTS */
+.romantic-title,
+.final-message h1 {
+  text-shadow: 0 0 15px rgba(255, 120, 190, 0.5);
+}
+
+/* 8. SMOOTH TRANSITION HELPERS  */
+.fade-element {
+  opacity: 0;
+  transition: 1s ease;
+}
+body.love-active .fade-element {
+  opacity: 1;
+}
+.scale-element {
+  transform: scale(0.8);
+  transition: 1s ease;
+}
+body.love-active .scale-element {
+  transform: scale(1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .memory-card {
+    transform: translateY(50px);
+  }
+}

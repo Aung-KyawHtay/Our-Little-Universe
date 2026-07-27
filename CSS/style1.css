@@ -1,0 +1,147 @@
+/* 
+  OUR LITTLE UNIVERSE 6 MONTHS OF LOVE CSS PART 1 Foundation + Loading Scene 
+  + Intro System Initial
+  State: - No romantic animation - No galaxy movement - No hearts - No stars
+/*
+1. GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #080014, #170022, #26002f, #080014);
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* LOADING */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 120, 190, 0.18),
+      transparent 45%
+    ),
+    linear-gradient(180deg, #05000d, #14001f);
+  z-index: 9999;
+}
+/* Static glow only. Animation OFF initially. */
+.loading-screen::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 150, 210, 0.18),
+    transparent 70%
+  );
+  filter: blur(50px);
+  opacity: 0.8;
+}
+/* 3. INTRO CONTENT */
+
+.intro-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+}
+.intro-content h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffffff, #ffb6d9, #ffd6f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(255, 120, 190, 0.35);
+}
+.intro-content p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1px;
+}
+
+/* 4. SURPRISE BUTTONBASE */
+.surprise-btn {
+  margin-top: 40px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.35);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* Normal hover only */
+.surprise-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 105, 180, 0.25);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+}
+.surprise-btn:active {
+  transform: scale(0.95);
+}
+
+/* 5. INITIAL HIDDEN SYSTEM  */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Reveal controlled by JS */
+.hidden.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* 6. MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .intro-content h1 {
+    font-size: 2.5rem;
+  }
+  .intro-content p {
+    font-size: 0.95rem;
+  }
+  .surprise-btn {
+    width: 85%;
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,326 @@
+/* =========================================================
+OUR LITTLE UNIVERSE - 6 MONTHS OF LOVE
+
+CSS PART 5
+FINAL CLEAN CINEMATIC VERSION
+
+Systems:
+- Glass UI
+- Final Reveal
+- Floating Stars
+- Floating Hearts
+- Memory Spacing Fix
+- Button Polish
+========================================================= */
+
+/* =========================================
+1. GLASS EFFECT
+========================================= */
+
+.glass-card,
+.memory-card,
+.love-message,
+#secretMessage {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.surprise-btn,
+.love-button,
+.final-button {
+  position: relative;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.surprise-btn::before,
+.love-button::before,
+.final-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -100%;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+.surprise-btn:hover::before,
+.love-button:hover::before,
+.final-button:hover::before {
+  left: 100%;
+}
+
+.final-button {
+  font-size: 20px !important;
+
+  padding: 16px 40px !important;
+
+  border-radius: 40px;
+
+  margin-top: 15px !important;
+}
+
+.final-message {
+  text-align: center;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  transition: all 1s ease;
+}
+
+.final-message.show,
+.final-message.visible {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.final-message h1 {
+  color: #ffd6ea;
+
+  letter-spacing: 2px;
+}
+
+.final-message p {
+  color: white;
+
+  letter-spacing: 1px;
+}
+
+.final-section {
+  min-height: auto !important;
+
+  height: auto !important;
+
+  padding: 10px 20px 25px !important;
+
+  margin-top: -80px !important;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(30px);
+
+  transition: all 0.8s ease;
+}
+
+.final-section.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+/* Open My Memory Button */
+
+#memoryButton {
+  margin-bottom: 35px !important;
+}
+
+#anniversaryReveal {
+  min-height: auto !important;
+
+  padding-bottom: 0 !important;
+
+  margin-bottom: 0 !important;
+}
+
+/* Photo section */
+
+#memorySection {
+  min-height: auto !important;
+
+  height: auto !important;
+
+  padding: 0 !important;
+
+  margin: 0 !important;
+}
+
+.memory-container {
+  padding: 0 !important;
+
+  margin: 0 !important;
+}
+
+.memory-card {
+  width: min(90%, 420px);
+
+  margin: 0 auto 25px !important;
+}
+
+.memory-card img {
+  width: 100%;
+
+  display: block;
+
+  border-radius: 15px;
+}
+
+.memory-message {
+  background: rgba(0, 0, 0, 0.45);
+
+  padding: 15px;
+
+  border-radius: 12px;
+}
+
+.memory-message h2,
+.memory-message p {
+  color: white !important;
+}
+
+.dynamic-star {
+  position: fixed !important;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  font-size: 22px;
+
+  animation: floatingStar 6s ease-in-out infinite;
+}
+
+@keyframes floatingStar {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(40vh) rotate(180deg);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-30px) rotate(360deg);
+
+    opacity: 0.5;
+  }
+}
+
+.floating-heart {
+  position: fixed !important;
+
+  bottom: 0;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  animation: floatingHeart 7s ease-in-out infinite;
+}
+
+@keyframes floatingHeart {
+  0% {
+    transform: translateY(0) scale(1);
+
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-45vh) scale(1.3);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+
+    opacity: 0.5;
+  }
+}
+
+.relationship-counter {
+  margin-top: 15px;
+
+  color: #ffd6ea;
+
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .final-button {
+    font-size: 18px !important;
+  }
+
+  .memory-card {
+    width: 92%;
+  }
+
+  .final-message h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Open My Memory button -> Photo */
+
+#memoryButton {
+  margin-bottom: 10px !important;
+}
+
+/* Memory section */
+
+#memorySection {
+  padding-top: 0 !important;
+
+  margin-top: -550px !important;
+}
+
+/* Photo card */
+
+.memory-card {
+  margin-top: 0 !important;
+
+  margin-bottom: 10px !important;
+}
+
+/* Photo -> Final Surprise */
+
+.final-section {
+  margin-top: -270px !important;
+
+  padding-top: 0 !important;
+
+  padding-bottom: 10px !important;
+}
+
+/* Final button */
+
+.final-button {
+  margin-top: 5px !important;
+}
