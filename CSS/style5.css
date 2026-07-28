@@ -335,7 +335,7 @@ Systems:
   #memorySection {
     padding-top: 0 !important;
 
-    margin-top: -850px !important;
+    margin-top: -700px !important;
   }
 
   /* Photo card */
@@ -349,7 +349,7 @@ Systems:
   /* Photo -> Final Surprise */
 
   .final-section {
-    margin-top: -500px !important;
+    margin-top: -380px !important;
 
     padding-top: 0 !important;
 
