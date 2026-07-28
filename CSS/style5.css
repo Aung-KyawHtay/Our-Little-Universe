@@ -279,7 +279,7 @@ Systems:
   }
 
   .memory-card {
-    width: 92%;
+    width: 90%;
   }
 
   .final-message h1 {
@@ -323,42 +323,4 @@ Systems:
 
 .final-button {
   margin-top: 5px !important;
-}
-
-@media (max-width: 768px) {
-  #memoryButton {
-    margin-bottom: 10px !important;
-  }
-
-  /* Memory section */
-
-  #memorySection {
-    padding-top: 0 !important;
-
-    margin-top: -700px !important;
-  }
-
-  /* Photo card */
-
-  .memory-card {
-    margin-top: 0 !important;
-
-    margin-bottom: 10px !important;
-  }
-
-  /* Photo -> Final Surprise */
-
-  .final-section {
-    margin-top: -380px !important;
-
-    padding-top: 0 !important;
-
-    padding-bottom: 10px !important;
-  }
-
-  /* Final button */
-
-  .final-button {
-    margin-top: 5px !important;
-  }
 }
